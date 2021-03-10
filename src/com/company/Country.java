@@ -10,6 +10,7 @@ public enum Country {
     private final String ruName;
     private final boolean isOpen;
 
+
     Country(String ruName, boolean isOpen) {
         this.ruName = ruName;
         this.isOpen = isOpen;
@@ -18,22 +19,28 @@ public enum Country {
     @Override
     public String toString() {
         return this.name() +
-                '{' + ruName +
-                '}';
+                '(' + ruName +
+                ')';
     }
 
     public static Country getByRuName(String country) throws NoSuchCountryException {
-        if(country==Country.Russia.ruName){
-            return Country.Russia;
+
+        for (int i = 0; i < Country.values().length; i++) {
+            if (country.equals(Country.values()[i].ruName)) {
+                return Country.values()[i];
+            }
         }
-        else if(country==Country.USA.ruName){
-            return Country.USA;
-        }
-        else if(country==Country.Italy.ruName){
-            return Country.Italy;
-        }
-        else {
-            throw new NoSuchCountryException(country);
+
+        throw new NoSuchCountryException(country);
+
+    }
+
+    public String getIsOpen() {
+        if (this.isOpen) {
+            return "открыта для посещения";
+        } else {
+            return "закрыта для посещения";
         }
     }
+
 }

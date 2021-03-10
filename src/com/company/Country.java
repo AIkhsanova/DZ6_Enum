@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.NoSuchElementException;
 
 public enum Country {
     Russia("Россия", true),
@@ -11,19 +10,19 @@ public enum Country {
     private final boolean isOpen;
 
 
-    Country(String ruName, boolean isOpen) {
+    Country(final String ruName, final boolean isOpen) {
         this.ruName = ruName;
         this.isOpen = isOpen;
     }
 
     @Override
     public String toString() {
-        return this.name() +
-                '(' + ruName +
-                ')';
+        return this.name() + '('
+                + ruName
+                + ')';
     }
 
-    public static Country getByRuName(String country) throws NoSuchCountryException {
+    public static Country getByRuName(final String country) throws NoSuchCountryException {
 
         for (int i = 0; i < Country.values().length; i++) {
             if (country.equals(Country.values()[i].ruName)) {
@@ -31,7 +30,7 @@ public enum Country {
             }
         }
 
-        throw new NoSuchCountryException(country);
+        throw new NoSuchCountryException();
 
     }
 

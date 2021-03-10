@@ -1,6 +1,6 @@
 package com.company;
 
-public class NoSuchCountryException extends Exception{
-    public NoSuchCountryException(String country) {
+public class NoSuchCountryException extends Exception {
+    public NoSuchCountryException() {
     }
 }

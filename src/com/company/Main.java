@@ -1,9 +1,17 @@
 package com.company;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+
+
+    public static void main(String[] args) {
+        for (int i = 0; i < Country.values().length; i++) {
+            System.out.println(Country.values()[i]);
+        }
+        getCountry();
+
+    }
 
 
     public static void getCountry() {
@@ -25,12 +33,5 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
-        for (int i = 0; i < Country.values().length; i++) {
-            System.out.println(Country.values()[i]);
-        }
-    getCountry();
-
-    }
 }
 

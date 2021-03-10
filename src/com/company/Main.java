@@ -21,10 +21,11 @@ public class Main {
             Country output = Country.valueOf(str);
             System.out.println("Страна " + output + " " + output.getIsOpen());
         } catch (NullPointerException e) {
-            System.out.println("Неккоректный ввод");
+            System.out.println(". getCountry():Неккоректный ввод-NullPointerException");
         } catch (IllegalArgumentException e) {
-            System.out.println("Наименование страны на английском введено некорректно, проверяем русское название...");
+            System.out.println(". getCountry():Наименование страны на английском введено некорректно,");
             try {
+                System.out.println("проверяем русское название...");
                 Country output = Country.getByRuName(str);
                 System.out.println("Страна " + output + " " + output.getIsOpen());
             } catch (NoSuchCountryException e1) {
